@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7748e977f3edb489cbdab85437d650, type: 3}
+  m_Name: Heal of Roots
+  m_EditorClassIdentifier: 
+  name: Heal of Roots
+  cooldownTime: 7
+  activeTime: 0.5
+  Damage: 30
+  bullet: {fileID: 1269702046076124891, guid: 5c26ec525c0cc354fb2da2d1725d787f, type: 3}

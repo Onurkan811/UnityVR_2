@@ -11,8 +11,10 @@ public class SpellHolder : MonoBehaviour
     private GameObject gjCam;
     private Coroutine selectionDelay;
     public bool isSelected = false;
+    public bool isCastableEnemy = true;
     public bool castSpell = false;
     public PointerDetect pointer;
+
     private void Start()
     {
         gjCam = GameObject.Find("Main Camera");
@@ -26,7 +28,17 @@ public class SpellHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        castSpell = pointer.castSpell;
+        if (isCastableEnemy)
+        {
+            castSpell = pointer.castSpell;
+            
+        }
+        else
+        {
+            castSpell = true;
+        }
+
+        
 
         switch (state)
         {

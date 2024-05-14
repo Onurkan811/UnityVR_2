@@ -7,13 +7,7 @@ public class SpellMenu : MonoBehaviour
     public GameObject gjCam;
     void Start()
     {
-        foreach (var material in Resources.FindObjectsOfTypeAll<Material>())
-        {
-            if (material.shader.name.StartsWith("Universal Render Pipeline"))
-            {
-                material.shader = Shader.Find("Standard");
-            }
-        }
+
     }
 
     // Update is called once per frame
