@@ -10091,6 +10091,26 @@ PrefabInstance:
       propertyPath: ReticleInteractionLayerMask.m_Bits
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5011329517266574170, guid: d45ff75f67552e147ad474ec3b2cdef3,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011329517266574170, guid: d45ff75f67552e147ad474ec3b2cdef3,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.058823515
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011329517266574170, guid: d45ff75f67552e147ad474ec3b2cdef3,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.08233322
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011329517266574170, guid: d45ff75f67552e147ad474ec3b2cdef3,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.50980395
+      objectReference: {fileID: 0}
     - target: {fileID: 5861364120076854948, guid: d45ff75f67552e147ad474ec3b2cdef3,
         type: 3}
       propertyPath: m_Name
