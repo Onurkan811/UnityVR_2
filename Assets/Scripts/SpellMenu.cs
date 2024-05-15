@@ -13,6 +13,7 @@ public class SpellMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(gjCam.transform.position.x, gjCam.transform.position.y - 0.75f, gjCam.transform.position.z);
         if (gjCam.transform.eulerAngles.x < 60)
         {
             Quaternion q = transform.rotation;

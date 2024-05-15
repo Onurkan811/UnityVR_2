@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
         StartCoroutine(lezGo());

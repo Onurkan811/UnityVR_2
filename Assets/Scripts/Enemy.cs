@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             spellN = collision.gameObject.GetComponent<Bullet>().spell;
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             switch (spellN)
             {
                 case "fire":

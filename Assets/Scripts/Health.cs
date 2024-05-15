@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
             hp = 0;
             hpBar.fillAmount = 0;
             gameObject.layer = 0;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
