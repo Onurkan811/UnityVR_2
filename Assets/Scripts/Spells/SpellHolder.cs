@@ -14,10 +14,12 @@ public class SpellHolder : MonoBehaviour
     public bool isCastableEnemy = true;
     public bool castSpell = false;
     public PointerDetect pointer;
+    private Animator asaAnim;
 
     private void Start()
     {
         gjCam = GameObject.Find("Main Camera");
+        asaAnim = GameObject.Find("Asa_Export").GetComponent<Animator>();
     }
     enum SpellState { 
         ready,
@@ -50,6 +52,7 @@ public class SpellHolder : MonoBehaviour
                     if (castSpell)
                     {
                         spell.Activate(gjCam);
+                        asaAnim.SetTrigger("spell");
                         Debug.Log("Activate Func.");
                         state = SpellState.active;
                         isSelected = false;

@@ -39643,7 +39643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: ice
-  speed: 2
+  speed: 3
   goOn: 0
   crosshair: {fileID: 3733005153048449188}
 --- !u!135 &4075288497018079809

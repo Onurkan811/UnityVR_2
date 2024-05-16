@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public Image hpBar;
     public float hp;
     float maxHP;
+    private Animator anim;
 
     private void Start()
     {
@@ -23,7 +24,29 @@ public class Health : MonoBehaviour
             hp = 0;
             hpBar.fillAmount = 0;
             gameObject.layer = 0;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void DamagePlayer(int a)
+    {
+        hp -= a;
+        Debug.Log("Can: " + hp);
+        if (hp <= 0)
+        {
+            Debug.Log("Öldün..");
+        }
+    }
+
+    public void DamageDragon(int a)
+    {
+        hp -= a;
+        hpBar.fillAmount = hp / maxHP;
+        Debug.Log("Ejderha: " + hp);
+        if (hp <= 0)
+        {
+            Debug.Log("Forest Dragon is Dead");
+            hpBar.fillAmount = 0;
         }
     }
 

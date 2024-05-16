@@ -29,12 +29,18 @@ public class Rota1 : MonoBehaviour
         {
             case 1:
                 agent.SetDestination(R1.position);
+                agent.speed = 2;
                 break;
             case 2:
                 agent.SetDestination(R2.position);
+                agent.speed = 4;
                 break;
             case 3:
                 agent.SetDestination(R3.position);
+                agent.speed = 1;
+                break;
+            case 4:
+                agent.enabled = false;
                 break;
         }
     }

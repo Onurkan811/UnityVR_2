@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 {
     public string spell;
     Rigidbody rb;
-    public float speed = 215;
+    public float speed = 5;
     public bool goOn = false;
     private GameObject yourTarget;
     public GameObject crosshair;
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
         RaycastHit _hit = new RaycastHit();
         if (Physics.Raycast(crosshair.transform.position, crosshair.transform.forward, out _hit))
         {
-            Debug.Log(_hit.transform.gameObject);
+            Debug.Log("Mermi:"+_hit.transform.gameObject);
             if (_hit.transform.tag == "Enemy")
             {
                 yourTarget = _hit.transform.gameObject;
@@ -42,9 +42,7 @@ public class Bullet : MonoBehaviour
 
         if (goOn == true)
         {
-            Debug.Log("Çalýþýyor");
-            transform.right = yourTarget.transform.position - transform.position;
-            transform.position += transform.right * speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, yourTarget.transform.position, speed * Time.deltaTime);
         }
 
     }
