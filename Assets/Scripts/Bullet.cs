@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     public bool goOn = false;
     private GameObject yourTarget;
     public GameObject crosshair;
+    
+    public AudioSource audioSource;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,6 +44,10 @@ public class Bullet : MonoBehaviour
 
         if (goOn == true)
         {
+            if (spell == "fire")
+            {
+                audioSource.Play();
+            }
             transform.position = Vector3.MoveTowards(transform.position, yourTarget.transform.position, speed * Time.deltaTime);
         }
 

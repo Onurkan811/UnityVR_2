@@ -5,12 +5,14 @@ using UnityEngine;
 public class R3 : MonoBehaviour
 {
     public GameObject dragon;
+    public Transform dragonSpawn;
     public GameObject lights;
+    private BoxCollider R3Collider;
 
     // Start is called before the first frame update
     void Start()
     {
-        dragon.SetActive(false);
+        R3Collider = GetComponent<BoxCollider>();
         lights.SetActive(false);
     }
 
@@ -23,8 +25,10 @@ public class R3 : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            dragon.SetActive(true);
+            Instantiate(dragon, dragonSpawn.position, dragonSpawn.rotation);            
             lights.SetActive(true);
+            R3Collider.enabled = false;
+            
         }
     }
 }

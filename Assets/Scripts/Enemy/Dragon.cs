@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.UI.Image;
+using UnityEngine.SceneManagement;
 
 public class Dragon : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class Dragon : MonoBehaviour
     public Transform fireSpawnP;
     public GameObject fireBreathFab;
     private bool dead;
+    
+    public AudioSource EnemySoundSource;
+    public AudioClip[] EnemySounds;
     private void Start()
     {
         transPlayer = GameObject.Find("Player").GetComponent<Transform>();
@@ -29,27 +33,37 @@ public class Dragon : MonoBehaviour
         matDragon.color = Color.white;
         StartCoroutine(StartDelay());
     }
-
+    
     private void Update()
     {
        
         if(health.hp <= 0)
         {
             dead = true;
-        }
-
-        if (health.hp <= 0) 
-        {
             anim.SetTrigger("dead");
+            EnemySoundSource.clip = EnemySounds[0];
+            EnemySoundSource.Play();
             StartCoroutine(DestroyDelay(10));
+            SceneManager.LoadScene("IceMap");
         }
 
         if(canWalk)
         {
             anim.SetTrigger("walk");
             agent.SetDestination(transPlayer.position);
-            if(agent.remainingDistance - agent.stoppingDistance <= 0.01f)
+            if (EnemySoundSource.isPlaying == false)
             {
+                EnemySoundSource.clip = EnemySounds[1];
+                EnemySoundSource.Play();
+            }
+            
+            if(agent.remainingDistance <= 4 && agent.hasPath)
+            {
+                if (EnemySoundSource.isPlaying == false)
+                {
+                    EnemySoundSource.clip = EnemySounds[0];
+                    EnemySoundSource.Play();
+                }
                 anim.SetTrigger("attack2");
                 StartCoroutine(Attack2Delay());
             }
@@ -58,6 +72,11 @@ public class Dragon : MonoBehaviour
         {
             agent.SetDestination(transform.position);
             anim.SetTrigger("idle");
+            if (EnemySoundSource.isPlaying == false)
+            {
+                EnemySoundSource.clip = EnemySounds[0];
+                EnemySoundSource.Play();
+            }
         }
     }
     public void OnPointerEnter()
@@ -107,6 +126,8 @@ public class Dragon : MonoBehaviour
         matDragon.color = Color.cyan;
         canWalk = false;
         StartCoroutine(FreezeTime());
+        EnemySoundSource.clip = EnemySounds[3];
+        EnemySoundSource.Play();
     }
 
     IEnumerator FreezeTime()
@@ -131,6 +152,9 @@ public class Dragon : MonoBehaviour
     {
         if (!dead) 
         {
+            anim.SetTrigger("attack1");
+            EnemySoundSource.clip = EnemySounds[2];
+            EnemySoundSource.Play();
             Instantiate(fireBreathFab, fireSpawnP.position, Quaternion.identity);
             yield return new WaitForSeconds(2.85f);
             canWalk = true;

@@ -8,9 +8,11 @@ public class Rota1 : MonoBehaviour
     private NavMeshAgent agent;
     private Transform R1,R2,R3;
     private int dest;
+    public AudioSource walkSound;
     // Start is called before the first frame update
     void Start()
     {
+    
         agent = GetComponent<NavMeshAgent>();
         R1 = GameObject.Find("R1").GetComponent<Transform>();
         R2 = GameObject.Find("R2").GetComponent<Transform>();
@@ -20,6 +22,15 @@ public class Rota1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (agent.hasPath)
+        {
+            if(!walkSound.isPlaying)
+                walkSound.Play();
+        }
+        else
+        {
+            walkSound.Stop();
+        }
         if(agent.remainingDistance == 0)
         {
             dest++;
@@ -37,10 +48,7 @@ public class Rota1 : MonoBehaviour
                 break;
             case 3:
                 agent.SetDestination(R3.position);
-                agent.speed = 1;
-                break;
-            case 4:
-                agent.enabled = false;
+                agent.speed = 2;
                 break;
         }
     }

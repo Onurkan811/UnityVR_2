@@ -11,6 +11,10 @@ public class EnemyAttack : MonoBehaviour
     private Animator anim;
     private Health playerHealth;
     private EnemyFollow follow;
+    
+    // Audio
+    public AudioSource MushroomSoundSource;
+    public AudioClip[] MushroomSounds;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -35,6 +39,8 @@ public class EnemyAttack : MonoBehaviour
                         anim.SetTrigger("attack");
                         timer = attackTimer;
                         playerHealth.DamagePlayer(20);
+                        MushroomSoundSource.clip = MushroomSounds[0];
+                        MushroomSoundSource.Play();
                     }
                 }
             }

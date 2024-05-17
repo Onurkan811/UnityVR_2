@@ -2682,6 +2682,7 @@ GameObject:
   - component: {fileID: 8709540193265642716}
   - component: {fileID: 3915847110595730749}
   - component: {fileID: 4114962835978039318}
+  - component: {fileID: 3293889438873365477}
   m_Layer: 3
   m_Name: Magic Forest Dragon
   m_TagString: Enemy
@@ -2741,7 +2742,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 1156597513706625739}
-  hp: 200
+  hp: 400
+  EnemySoundSource: {fileID: 3293889438873365477}
+  EnemySounds:
+  - {fileID: 8300000, guid: 51f5553b024fb425189791526ed9e403, type: 3}
+  - {fileID: 8300000, guid: c01e3dfaacafb4a969cfa0e7efe59670, type: 3}
+  - {fileID: 8300000, guid: bb52a06088deb4f44ac81798200d7bff, type: 3}
+  - {fileID: 8300000, guid: 5a5787f44f4904976bc12167e49d33a8, type: 3}
 --- !u!195 &2044993372163348853
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2782,6 +2789,12 @@ MonoBehaviour:
   fireSpawnP: {fileID: 6484836554083166126}
   fireBreathFab: {fileID: 5319296311590276301, guid: e6511074fdc874b4694c595e32a6a9b4,
     type: 3}
+  EnemySoundSource: {fileID: 3293889438873365477}
+  EnemySounds:
+  - {fileID: 8300000, guid: 51f5553b024fb425189791526ed9e403, type: 3}
+  - {fileID: 8300000, guid: c01e3dfaacafb4a969cfa0e7efe59670, type: 3}
+  - {fileID: 8300000, guid: bb52a06088deb4f44ac81798200d7bff, type: 3}
+  - {fileID: 8300000, guid: 5a5787f44f4904976bc12167e49d33a8, type: 3}
 --- !u!136 &3915847110595730749
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2832,6 +2845,102 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!82 &3293889438873365477
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715348454449096379}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8799783117250930862
 GameObject:
   m_ObjectHideFlags: 0
