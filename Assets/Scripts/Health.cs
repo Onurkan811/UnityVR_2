@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public Image hpBar;
+    public Image easeHealthBar;
     public float hp;
     float maxHP;
     private Animator anim;
+
+    private float lerpSpeed = 0.01f;
 
     private void Start()
     {
@@ -27,14 +30,14 @@ public class Health : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
+    
     public void DamagePlayer(int a)
     {
         hp -= a;
         Debug.Log("Can: " + hp);
         if (hp <= 0)
         {
-            Debug.Log("Öldün..");
+            Debug.Log("ï¿½ldï¿½n..");
         }
     }
 
@@ -57,6 +60,13 @@ public class Health : MonoBehaviour
         if (hp > maxHP)
         {
             hp = maxHP;
+        }
+    }
+    void Update()
+    {
+        if (easeHealthBar.fillAmount != hpBar.fillAmount)
+        {
+            easeHealthBar.fillAmount = Mathf.Lerp(easeHealthBar.fillAmount, hpBar.fillAmount, lerpSpeed);
         }
     }
 }

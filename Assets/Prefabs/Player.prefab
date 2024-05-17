@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 0}
+  easeHealthBar: {fileID: 0}
   hp: 100
 --- !u!1 &6521041001620648468
 GameObject:
