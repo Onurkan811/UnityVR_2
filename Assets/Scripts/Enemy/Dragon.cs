@@ -23,6 +23,8 @@ public class Dragon : MonoBehaviour
     
     public AudioSource EnemySoundSource;
     public AudioClip[] EnemySounds;
+    
+    public AudioSource music;
     private void Start()
     {
         transPlayer = GameObject.Find("Player").GetComponent<Transform>();
@@ -76,6 +78,10 @@ public class Dragon : MonoBehaviour
             {
                 EnemySoundSource.clip = EnemySounds[0];
                 EnemySoundSource.Play();
+            }
+            if (music.isPlaying == false)
+            {
+                music.Play();
             }
         }
     }
