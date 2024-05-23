@@ -20,17 +20,28 @@ public class Health : MonoBehaviour
     
     public Image newHealthBar;
 
+    public GameObject gameOver;
+    public GameObject hurt;
+
+    private CanvasGroup hurtCanvasGroup;
+    
+    private CanvasGroup gameOverCanvasGroup;
+
+    private bool takingDamage = false;
+
+
     private void Start()
     {
+        hurtCanvasGroup = hurt.GetComponent<CanvasGroup>();
+        gameOverCanvasGroup = gameOver.GetComponent<CanvasGroup>();
         maxHP = hp;
     }
     public void Damage(int a)
-    {
+    {   
         hp -= a;
         hpBar.fillAmount = hp / maxHP;
-        
         if (hp <= 0) 
-        {
+        {   
             hp = 0;
             hpBar.fillAmount = 0;
             gameObject.layer = 0;
@@ -44,13 +55,20 @@ public class Health : MonoBehaviour
     }
     
     public void DamagePlayer(int a)
-    {
+    {   
+        takingDamage = true;
+
+        if (takingDamage)
+        {
+            StartCoroutine(ShowHurtPanel());
+        }
         hp -= a;
         newHealthBar.fillAmount = hp / maxHP;
         Debug.Log("Can: " + hp);
         if (hp <= 0)
         {
-            StartCoroutine(SceneDelay());
+            StartCoroutine(ShowgameOverPanel());
+            //StartCoroutine(SceneDelay());
             Debug.Log("Öldün..");
         }
     }
@@ -84,9 +102,60 @@ public class Health : MonoBehaviour
         }
     }
     
-    IEnumerator SceneDelay()
+  /*  IEnumerator SceneDelay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(10);
         SceneManager.LoadScene("ForestMap");
     }
+    */
+    IEnumerator ShowgameOverPanel()
+    {
+        if (gameOverCanvasGroup != null)
+        {
+            gameOver.SetActive(true);
+float fadeSpeed = 0.3f; // Opaklık değişim hızı
+float targetAlpha = 0.9f; // Hedef opaklık değeri
+float currentAlpha = 0f; // Şu anki opaklık değeri
+while (currentAlpha < targetAlpha) {
+    currentAlpha += fadeSpeed * Time.deltaTime; // Opaklık artışı
+    gameOverCanvasGroup.alpha = currentAlpha; // Opaklık değerini ayarla
+    yield return null; // Bir sonraki çerçeveyi bekle
 }
+       
+        yield return new WaitForSecondsRealtime(3f); // 3 saniye bekle (gerçek zamanla)
+        Time.timeScale = 0f; // Zamanı durdur
+        SceneManager.LoadScene("ForestMap");
+        }
+        else
+        {
+            Debug.LogError("CanvasGroup bileşeni bulunamadı!");
+        }
+    }
+    IEnumerator ShowHurtPanel()
+    {
+        if (hurtCanvasGroup != null)
+        {
+            hurt.SetActive(true);
+float fadeSpeed = 3f; // Opaklık değişim hızı
+float targetAlpha = 0.8f; // Hedef opaklık değeri
+float currentAlpha = 0f; // Şu anki opaklık değeri
+while (currentAlpha < targetAlpha) {
+    currentAlpha += fadeSpeed * Time.deltaTime; // Opaklık artışı
+    hurtCanvasGroup.alpha = currentAlpha; // Opaklık değerini ayarla
+    yield return null; // Bir sonraki çerçeveyi bekle
+}
+targetAlpha = 0f; // Hedef opaklık değerini sıfıra ayarla
+currentAlpha = 0.8f; // Şu anki opaklık değerini bir yap
+while (currentAlpha > targetAlpha) {
+    currentAlpha -= fadeSpeed * Time.deltaTime; // Opaklık azalışı
+    hurtCanvasGroup.alpha = currentAlpha; // Opaklık değerini ayarla
+    yield return null; // Bir sonraki çerçeveyi bekle
+}
+hurt.SetActive(false); // Hasar nesnesini devre dışı bırak
+
+        }
+        
+
+}
+}
+

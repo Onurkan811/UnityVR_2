@@ -32,8 +32,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FaceTex:
-        m_Texture: {fileID: 2800000, guid: f3785bd0a7d8d074b91378714ee9d3d8, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 1ef547b06072114418e1d07370221958, type: 3}
+        m_Scale: {x: 0.44, y: 0.45}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 6478860121035194722}
@@ -125,7 +125,8 @@ MonoBehaviour:
   materialHashCode: 630715269
   m_Version: 1.1.0
   m_SourceFontFileGUID: 92c0689be588bc14080b6419a002a227
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 92c0689be588bc14080b6419a002a227, type: 3}
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 92c0689be588bc14080b6419a002a227,
+    type: 3}
   m_SourceFontFile: {fileID: 0}
   m_AtlasPopulationMode: 0
   m_FaceInfo:
