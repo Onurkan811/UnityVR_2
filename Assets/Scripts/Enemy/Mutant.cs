@@ -40,12 +40,11 @@ public class Mutant : MonoBehaviour
         if(health.hp <= 0)
         {
             dead = true;
-            canWalk = true;
             anim.SetTrigger("dead");
-            EnemySoundSource.clip = EnemySounds[0];
-            EnemySoundSource.Play();
+            // EnemySoundSource.clip = EnemySounds[0];
+            // EnemySoundSource.Play();
             StartCoroutine(DestroyDelay(10));
-            SceneManager.LoadScene("IceMap");
+            SceneManager.LoadScene("LastLevel");
         }
 
         if(canWalk)
@@ -54,15 +53,16 @@ public class Mutant : MonoBehaviour
             agent.SetDestination(transPlayer.position);
             if (EnemySoundSource.isPlaying == false)
             {
-                EnemySoundSource.clip = EnemySounds[1];
+                EnemySoundSource.clip = EnemySounds[0];
+                EnemySoundSource.pitch = 4f;
                 EnemySoundSource.Play();
             }
             
-            if(agent.remainingDistance <= 4 && agent.hasPath)
+            if(agent.remainingDistance <= 2.2f && agent.hasPath)
             {
                 if (EnemySoundSource.isPlaying == false)
                 {
-                    EnemySoundSource.clip = EnemySounds[0];
+                    EnemySoundSource.clip = EnemySounds[1];
                     EnemySoundSource.Play();
                 }
                 anim.SetTrigger("attack2");
@@ -73,11 +73,11 @@ public class Mutant : MonoBehaviour
         {
             agent.SetDestination(transform.position);
             anim.SetTrigger("idle");
-            if (EnemySoundSource.isPlaying == false)
-            {
-                EnemySoundSource.clip = EnemySounds[0];
-                EnemySoundSource.Play();
-            }
+            // if (EnemySoundSource.isPlaying == false)
+            // {
+            //     EnemySoundSource.clip = EnemySounds[0];
+            //     EnemySoundSource.Play();
+            // }
             if (music.isPlaying == false)
             {
                 music.Play();
@@ -117,31 +117,33 @@ public class Mutant : MonoBehaviour
                 case "ice":
                     health.DamageDragon(50);
                     break;
-
-
             }
-
         }
     }
-
-
     void Freeze()
     {
         anim.SetTrigger("idle");
         canWalk = false;
         StartCoroutine(FreezeTime());
-        EnemySoundSource.clip = EnemySounds[3];
-        EnemySoundSource.Play();
+        EnemySoundSource.Stop();
     }
 
     IEnumerator FreezeTime()
     {
-        yield return new WaitForSeconds(7.1f);
+        if (!dead) 
+        {
+            anim.SetTrigger("attack1");
+            EnemySoundSource.clip = EnemySounds[1];
+            EnemySoundSource.Play();
+            Instantiate(fireBreathFab, fireSpawnP.position, Quaternion.identity);
+            yield return new WaitForSeconds(2.85f);
+            canWalk = true;
+        }
     }
 
     IEnumerator StartDelay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(12);
         canWalk = true;
     }
 

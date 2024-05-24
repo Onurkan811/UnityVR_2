@@ -31,7 +31,7 @@ public class IceThrow : MonoBehaviour
 
     IEnumerator StayDelay()
     {
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(4.1f);
         isStay = false;
     }
 

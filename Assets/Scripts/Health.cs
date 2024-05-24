@@ -123,7 +123,7 @@ while (currentAlpha < targetAlpha) {
 }
        
         yield return new WaitForSecondsRealtime(3f); // 3 saniye bekle (gerçek zamanla)
-        SceneManager.LoadScene("ForestMap");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
