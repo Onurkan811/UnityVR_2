@@ -44,27 +44,27 @@ public class LastLevelRoute : MonoBehaviour
         {
             case 1:
                 agent.SetDestination(R1.position);
-                agent.speed = 10;
+                agent.speed = 4;
                 break;
             case 2:
                 agent.SetDestination(R2.position);
-                agent.speed = 10;
+                agent.speed = 4;
                 break;
             case 3:
                 agent.SetDestination(R3.position);
-                agent.speed = 10;
+                agent.speed = 4;
                 break;
             case 4:
                 agent.SetDestination(R4.position);
-                agent.speed = 10;
+                agent.speed = 4;
                 break;
             case 5:
                 agent.SetDestination(R5.position);
-                agent.speed = 10;
+                agent.speed = 4;
                 break;
             case 6:
                 agent.SetDestination(R6.position);
-                agent.speed = 4;
+                agent.speed = 2;
                 break;
         }
     }

@@ -2954,7 +2954,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3188,7 +3188,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7750424290813524877, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
@@ -6615,7 +6615,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6803,7 +6803,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6978,7 +6978,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8939,7 +8939,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11367,7 +11367,7 @@ PrefabInstance:
     - target: {fileID: 7584465654978182941, guid: d53d8364305b2b74d98a3f0664552733,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
