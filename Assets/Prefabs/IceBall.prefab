@@ -39643,9 +39643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: ice
-  speed: 3
+  speed: 7
   goOn: 0
   crosshair: {fileID: 3733005153048449188}
+  audioSource: {fileID: 0}
 --- !u!135 &4075288497018079809
 SphereCollider:
   m_ObjectHideFlags: 0

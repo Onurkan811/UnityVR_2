@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: fire
-  speed: 6
+  speed: 10
   goOn: 0
   crosshair: {fileID: 5835925068550928179}
   audioSource: {fileID: 7105221336242150244}

@@ -17,7 +17,7 @@ public class IceSpiritFollow : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(transform.position, targetObj.position);
-        if (dist <= 50)
+        if (dist <= 70)
         {
             enemy.SetDestination(targetObj.position);
         }

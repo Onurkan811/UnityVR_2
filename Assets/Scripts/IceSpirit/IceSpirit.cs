@@ -56,7 +56,7 @@ public class IceSpirit : MonoBehaviour
 
     void Freeze()
     {
-        agent.speed = 5f;
+        agent.speed = 10f;
         GetComponent<Renderer>().material.color = Color.blue;
         StartCoroutine(FreezeTime());
     }
