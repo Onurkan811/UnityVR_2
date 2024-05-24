@@ -12,7 +12,6 @@ public class Rota1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
         agent = GetComponent<NavMeshAgent>();
         R1 = GameObject.Find("R1").GetComponent<Transform>();
         R2 = GameObject.Find("R2").GetComponent<Transform>();
